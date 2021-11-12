@@ -1,0 +1,16 @@
+<h1>Add Post...</h1><br>
+
+<%= form_for @user do |f| %>
+	<div>
+		<strong>Description : </strong>
+		<%= f.fields_for :posts do |post| %>
+		<%= post.text_field :description, placeholder: "Enter_description" %>
+		<% end -%>
+	</div>
+
+	<br>
+	<div>
+		<%= f.submit value="AddPost"%>
+	</div>
+	<br>
+<% end -%>

@@ -1,0 +1,32 @@
+<h1>Edit page</h1>
+
+<% @user.errors.each do |attr, msg|%>
+<%= attr %>
+<%= msg %><br>
+<% end %><br>
+
+
+<%= form_for @user do |f| %>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name, placeholder: "Enter_name" %>
+	</div>
+	<br>
+	<div>
+		<%= f.label :email %>
+		<%= f.text_field :email,placeholder: "Enter_email" %>
+	</div>
+	<br>
+	<div>
+		<%= f.fields_for :posts do |post| %>
+		<%= post.label :description %>
+		<%= post.text_field :description %>
+		<% end -%>
+	</div>
+
+	<br>
+	<div>
+		<%= f.submit value="Update.."%>
+	</div>
+	<br>
+<% end -%>

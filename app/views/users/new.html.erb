@@ -1,0 +1,23 @@
+<h1>Create new user</h1>
+
+<% @users.errors.each do |attr, msg|%>
+<%= attr  %>
+<%= msg %><br>
+<% end %><br>
+
+<%= form_for (@users) do |user| %>
+	<div>
+		<strong><%= user.label :name %> </strong>
+		<%= user.text_field :name, placeholder: "Enter_name", required: true %>
+	</div>
+	<br>
+	<div>
+		<strong><%= user.label :email %> </strong>
+		<%= user.text_field :email, placeholder: "Enter_email", required: true %>
+	</div>
+	<br>
+	<div>
+		<strong><%= user.submit value="CreateUser"%></strong>
+	</div>
+	<br>
+<% end -%>
