@@ -7,12 +7,12 @@
 
 <%= form_for (@users) do |user| %>
 	<div>
-		<strong><%= user.label :name %> </strong>
+		<strong><%= user.label :name %> </strong><br>
 		<%= user.text_field :name, placeholder: "Enter_name", required: true %>
 	</div>
 	<br>
 	<div>
-		<strong><%= user.label :email %> </strong>
+		<strong><%= user.label :email %> </strong><br>
 		<%= user.text_field :email, placeholder: "Enter_email", required: true %>
 	</div>
 	<br>

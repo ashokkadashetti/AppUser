@@ -17,6 +17,20 @@ class User < ApplicationRecord
 
 
 
+	has_many :posts, 
+			  dependent: :destroy 
+
+
+	accepts_nested_attributes_for  :posts, 
+								   :reject_if => proc {|attrs| attrs['description'].blank?},
+								   :allow_destroy => true,
+								   :update_only => true
+
+
+
+
+
+
 	
 	#.........................................................................................................................................
 	#:format => { :with => ~/\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}
@@ -52,13 +66,6 @@ class User < ApplicationRecord
 #...........................................................................................................
 	
 
-	has_many :posts, dependent: :destroy 
-
-
-	accepts_nested_attributes_for  :posts, 
-								   :reject_if => proc {|attrs| attrs['description'].blank?},
-								   :allow_destroy => true,
-								   :update_only => true
 
 
 end
