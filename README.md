@@ -1,25 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README would normally Created User credentials and also added nested attributes inside particular user
 
 Things you may want to cover:
 
-* Ruby version
+* Created user with Name and Email
 
-* System dependencies
+* Created saparate create page for Post
 
-* Configuration
+* Created saparete edit page for User and Post
 
 * Database creation
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # AppUser
