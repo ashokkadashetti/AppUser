@@ -1,0 +1,2 @@
+module EditPostsHelper
+end

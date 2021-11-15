@@ -9,9 +9,9 @@
 
 <% @users.posts.each do |post| %>
 <strong>Description:</strong>
-<%= post.description %><br><br>
+<%= post.description %>&nbsp &nbsp
+<strong><%= link_to "Edit", edit_item_path(@users) %></strong><br><br>
 <% end %>
 
 <strong><%= link_to "CreatePost", edit_post_path(@users) %></strong>&nbsp &nbsp
-<strong><%= link_to "Edit", edit_user_path(@users) %></strong>&nbsp &nbsp
 <strong><%= link_to "Back", users_path %></strong>
