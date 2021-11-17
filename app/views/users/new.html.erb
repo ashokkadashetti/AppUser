@@ -16,6 +16,15 @@
 		<%= user.text_field :email, placeholder: "Enter_email", required: true %>
 	</div>
 	<br>
+
+	<div>
+		<strong><%= user.label :password %> </strong><br>
+		<%= user.password_field :password, placeholder: "Enter_password", required: true %>
+	</div>
+	<br>
+
+	
+	
 	<div>
 		<strong><%= user.submit value="CreateUser"%></strong>
 	</div>

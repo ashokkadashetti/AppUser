@@ -1,30 +1,50 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+
+  devise :database_authenticatable, 
+  			 :registerable,
+         :recoverable, 
+         :rememberable, 
+         :validatable
+
+
+  #validates_presence_of :name
+
+  validates_uniqueness_of :name, :case_sensitive => false
+
+
+  def first_name
+    self.name.split.first
+  end
+
+  def last_name
+    self.name.split.last
+  end
 
 
 	validates :name, 
-			   presence: true, 
-			   uniqueness: true, 
-			   length: {minimum:3, maximum:10}, 
-			   format: {:with => /\A[^0-9`:;!@#\$%\^&*+_=]+\z/}
+			   		 presence: true, 
+			   	   uniqueness: true,			   	   
+			   		 length: {minimum:3, maximum:10}, 
+			   		 format: {:with => /\A[^0-9`:;!@#\$%\^&*+_=]+\z/}
 
 	validates :email, 
-			   presence: true, 
-			   uniqueness: true,
-			   length:{maximum:30}, 
-			   format: {with: URI::MailTo::EMAIL_REGEXP}
-
-
-
+			       presence: true, 
+			       uniqueness: true,
+			       length:{maximum:30}, 
+			       format: {with: URI::MailTo::EMAIL_REGEXP}
 
 
 	has_many :posts, 
-			  dependent: :destroy 
+			      dependent: :destroy 
 
 
 	accepts_nested_attributes_for  :posts, 
-								   :reject_if => proc {|attrs| attrs['description'].blank?},
-								   :allow_destroy => true,
-								   :update_only => true
+								     						 :reject_if => proc {|attrs| attrs['description'].blank?},
+															   :allow_destroy => true,
+															   :update_only => true
 
 
 
