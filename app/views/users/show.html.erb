@@ -6,6 +6,10 @@
 <strong>Email:</strong>
 <%= @users.email %><br><br>
 
+<strong>Password:</strong>
+<%= @users.encrypted_password %><br><br>
+
+
 
 <% @users.posts.each do |post| %>
 <strong>Description:</strong>

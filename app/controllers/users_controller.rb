@@ -28,8 +28,6 @@ class UsersController < ApplicationController
 
 		respond_to do |format|
 
-
-
 			if @users.save
 				format.html{ redirect_to users_path, notice: "User was successfully created." }
 				#format.json { render :show, status: :created, location: @user }
@@ -80,6 +78,8 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:name, :email,:password, posts_attributes: [:id, :description])
 	end
+
+#.........................................................................................
 
 end
 

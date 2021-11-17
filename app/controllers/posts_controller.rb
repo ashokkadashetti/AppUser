@@ -7,10 +7,6 @@ class PostsController < ApplicationController
 
 #................................................................
 
-
-
-#................................................................
-
 	def edit
 		@user=User.find(params[:id])
 		1.times {@user.posts.build}
@@ -36,6 +32,8 @@ class PostsController < ApplicationController
  	def post_params
  		params.require(:user).permit(:name, :email, posts_attributes: [:id, :description])
  	end
+
+ #.................................................................................................
 
 
 end
