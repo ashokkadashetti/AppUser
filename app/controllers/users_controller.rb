@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 #...........................................................
 
 	def show
-		@users=User.find(params[:id])
+		@users=User.friendly.find(params[:id])
 		
 
 	end
@@ -42,14 +42,14 @@ class UsersController < ApplicationController
 #...........................................................
 
 	def edit
-		@user=User.find(params[:id])
+		@user=User.friendly.find(params[:id])
 
 	end
 
 #...........................................................
 
   	def update
-  		@user=User.find(params[:id])
+  		@user=User.friendly.find(params[:id])
 
     	respond_to do |format|
     		@user.posts.destroy
@@ -65,7 +65,7 @@ class UsersController < ApplicationController
 #...........................................................
 
   	def destroy
-  		@user=User.find(params[:id])
+  		@user=User.friendly.find(params[:id])
     	@user.destroy
     	respond_to do |format|
       		format.html { redirect_to users_path, notice: "Successfully Deteted."}

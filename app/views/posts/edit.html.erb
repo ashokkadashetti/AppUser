@@ -4,7 +4,7 @@
 	<div>
 		<strong>Description : </strong>
 		<%= f.fields_for :posts do |post| %>
-		<%= post.text_field :description %>
+		<%= post.text_field :description,placeholder:"Enter_description" %>
 		<% end -%>
 	</div>
 

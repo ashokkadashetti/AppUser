@@ -1,9 +1,9 @@
 <h1>Create new user</h1>
 
 <% @users.errors.each do |attr, msg|%>
-<%= attr } %>
+<%= attr %>
 <%= msg %><br>
-<% end %><br>
+<% end %>
 
 <%= form_for (@users) do |user| %>
 	<div>

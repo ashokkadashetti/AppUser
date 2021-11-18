@@ -7,20 +7,20 @@
 
 <%= form_for @user do |f| %>
 	<div>
-		<%= f.label :name %>
+		<strong><%= f.label :name %> : </strong>
 		<%= f.text_field :name %>
 	</div>
 	<br>
 
 	<div>
-		<%= f.label :email %>
+		<strong><%= f.label :email %> : </strong>
 		<%= f.text_field :email %>
 	</div>
 	<br>
 
 	<div>
-		<%= f.label :password %>
-		<%= f.password_field :password %>
+		<strong><%= f.label :password %> : </strong>
+		<%= f.password_field :password,placeholder:"Enter_password" %>
 	</div>
 	<br>
 

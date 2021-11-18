@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
 
 
 	def edit
-		@user=User.find(params[:id])
+		@user=User.friendly.find(params[:id])
 		#1.times {@user.posts.build}
 		
 	end
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
 #................................................................
 
 	def update
-  		@user=User.find(params[:id])
+  		@user=User.friendly.find(params[:id])
 
     	respond_to do |format|
       		if @user.update(post_params)
