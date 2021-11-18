@@ -1,8 +1,8 @@
-<h1>Edit page</h1>
+<h1>Edit User</h1>
 
 <% @user.errors.each do |attr, msg|%>
-<%= attr %>
-<%= msg %><br>
+	<%= attr %>
+	<%= msg %><br>
 <% end %><br>
 
 <%= form_for @user do |f| %>
@@ -25,7 +25,7 @@
 	<br>
 
 	<div>
-		<%= f.submit value="Update..", class:'btn btn-secondary' %>&nbsp &nbsps
+		<%= f.submit value="Update..", class:'btn btn-secondary' %>&nbsp &nbsp
 		<%= link_to "Back", user_path %>
 	</div>
 	

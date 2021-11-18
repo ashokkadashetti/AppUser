@@ -1,8 +1,8 @@
 <h1>Create new user</h1>
 
 <% @users.errors.each do |attr, msg|%>
-<%= attr %>
-<%= msg %><br>
+	<%= attr %>
+	<%= msg %><br>
 <% end %>
 
 <%= form_for (@users) do |user| %>
@@ -22,8 +22,6 @@
 		<%= user.password_field :password, placeholder: "Enter_password", required: true %>
 	</div>
 	<br>
-
-	
 	
 	<div>
 		<strong><%= user.submit value="CreateUser"%></strong>
