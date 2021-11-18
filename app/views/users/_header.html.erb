@@ -9,6 +9,8 @@
         <li class="nav-item">
           <%= link_to 'About_us', pages_path, class:"nav-link"%>
         </li>
+
+
         <% if user_signed_in? %>
         <li class="nav-item">
           <%= link_to 'SignOut', destroy_user_session_path, method: :delete, class:"nav-link"%>
@@ -24,8 +26,18 @@
         <li class="nav-item">
           <%= link_to 'SignIn', new_user_session_path, class:"nav-link"%>
         </li>
-
         <% end %>
+
+
+        <li class="nav-item">
+          <%= link_to 'Home', pages_path, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'CurrentUser', users_url, class:"nav-link"%>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Main', pages_path, class:"nav-link"%>
+        </li>
         
       </ul>
       <form class="d-flex">
