@@ -5,17 +5,17 @@
 
 <strong>Email:</strong>
 <%= @users.email %> &nbsp&nbsp&nbsp
-<strong><%= link_to "Edit", edit_user_path(@users) %></strong><br><br>
+<strong><%= link_to "Edit", edit_user_path(@users) if logged_in?(:site_admin) %></strong><br><br>
 
 
 <% @users.posts.each do |post| %>
 <strong>Description:</strong>
 <%= post.description %>&nbsp &nbsp
-<strong><%= link_to "Edit", edit_item_path(@users) %></strong>&nbsp &nbsp
-<strong><%= link_to 'Delete', item_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></strong><br><br>
+<strong><%= link_to "Edit", edit_item_path(@users) if logged_in?(:site_admin) %></strong>&nbsp &nbsp
+<strong><%= link_to 'Delete', item_path(post), method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></strong><br><br>
 
 <% end %>
 
 
-<strong><%= link_to "CreatePost", edit_post_path(@users) %></strong>&nbsp &nbsp
+<strong><%= link_to "CreatePost", edit_post_path(@users) if logged_in?(:site_admin) %></strong>&nbsp &nbsp
 <strong><%= link_to "Back", users_path %></strong>
