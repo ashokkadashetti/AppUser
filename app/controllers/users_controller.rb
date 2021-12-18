@@ -51,7 +51,7 @@ class UsersController < ApplicationController
   		@users=User.friendly.find(params[:id])
 
     	respond_to do |format|
-    		@users.posts.destroy
+    		#@users.posts.destroy
       		if @users.update(user_params)
         		@users.save
         		format.html { redirect_to users_path,
